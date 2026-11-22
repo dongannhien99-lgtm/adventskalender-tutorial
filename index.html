@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventskalender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mountains+of+Christmas:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Mountains of Christmas", serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: rgb(245, 90, 79);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .door {
+            width: 120px;
+            height: 120px;
+            background-color: rgb(245, 67, 54);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 12px;
+            cursor: pointer;
+            transition: 225ms ease-in-out;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .door:hover {
+            background-color: rgb(81, 97, 73);
+            transform: scale(1.1);
+        }
+
+        .door:active {
+            background-color: rgb(245, 67, 54);
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div onclick="openDoor(this, 'Nimm dir etwas Ruhe und du wirst mehr Energie haben.', 'rgb(102, 138, 83)', '2026-12-01')" class="door">1</div>
+    <div class="door">2</div>
+    <div class="door">3</div>
+    <div class="door">4</div>
+    <div class="door">5</div>
+    <div class="door">6</div>
+    <div class="door">7</div>
+    <div class="door">8</div>
+    <div class="door">9</div>
+    <div class="door">10</div>
+    <div class="door">11</div>
+    <div class="door">12</div>
+    <div class="door">13</div>
+    <div class="door">14</div>
+    <div class="door">15</div>
+    <div class="door">16</div>
+    <div class="door">17</div>
+    <div class="door">18</div>
+    <div class="door">19</div>
+    <div class="door">20</div>
+    <div class="door">21</div>
+    <div class="door">22</div>
+    <div class="door">23</div>
+    <div class="door">24</div> -->
+
+    <script>
+        function openDoor(div, text, background, date) {
+            let currentDate = new Date().toISOString().slice(0, 10);
+            let audioSuccess = new Audio('glocke.mp3');
+            let audioDisabled = new Audio('gesperrt.mp3');
+
+            if (!div.dataset.number) {
+                div.dataset.number = div.innerHTML;
+            }
+
+            if (currentDate >= date) {
+                if (div.innerHTML === div.dataset.number) {
+                    div.innerHTML = text;
+                    div.style.fontSize = '15px';
+                    div.style.backgroundColor = background;
+                    audioSuccess.play();
+                } else {
+                    div.innerHTML = div.dataset.number;
+                    div.style.fontSize = '16px';
+                    div.style.backgroundColor = 'rgb(245, 67, 54)';
+                }
+            } else {
+                div.innerHTML = 'Du darfst die Tür nicht vorher öffnen';
+                div.style.fontSize = '15px';
+                div.style.backgroundColor = 'red';
+                audioDisabled.play();
+                setTimeout(() => {
+                    div.innerHTML = div.dataset.number;
+                    div.style.fontSize = '16px';
+                    div.style.backgroundColor = 'rgb(245, 67, 54)';
+                }, 4000);
+                return;
+            }
+        }
+
+        let spruche = [
+            'Nimm dir etwas Ruhe und du wirst mehr Energie haben. Finde A!',
+            'Lass die kleinen Momente des Glücks nicht an dir vorbeiziehen. Finde B!',
+            'Es ist Zeit, dich selbst mit Güte zu behandeln. Finde C!',
+            'Freundlichkeit ist das schönste Geschenk, das du geben kannst. Finde D!',
+            'Echte Freude kommt von innen. Finde E!',
+            'Ein Lächeln ist das beste Accessoire, das du tragen kannst. Finde F!',
+            'Jeder Tag ist eine neue Gelegenheit, etwas Schönes zu erleben. Finde G!',
+            'Erlaube dir, deine eigenen Erfolge zu feiern. Finde H!',
+            'Glück entsteht oft durch Aufmerksamkeit in kleinen Dingen. Finde I!',
+            'Eine positive Einstellung verändert alles. Finde J!',
+            'Jeder Tag bringt neue Möglichkeiten, dein Bestes zu geben. Finde K!',
+            'Der Winter erinnert uns daran, innezuhalten und nachzudenken. Finde L!',
+            'Veränderungen beginnen mit kleinen Schritten. Finde M!',
+            'Erlaube dir, einfach nur du selbst zu sein. Finde N!',
+            'Freude steckt in den einfachsten Dingen. Finde O!',
+            'Glaube an die Magie des Neuanfangs. Finde P!',
+            'Ein Schritt nach dem anderen führt ans Ziel. Finde Q!',
+            'Dankbarkeit verwandelt alltägliche Momente in Glück. Finde R!',
+            'Nimm dir Zeit, um die Schönheit des Augenblicks zu genießen. Finde S!',
+            'Vertrauen ist der Schlüssel zu innerem Frieden. Finde T!',
+            'Erinnerungen sind der wahre Schatz des Lebens. Finde U!',
+            'Jede kleine Geste der Freundlichkeit zählt. Finde V!',
+            'Verbringe Zeit mit den Menschen, die dir wichtig sind. Finde W!',
+            'Die besten Geschenke im Leben sind nicht materiell. Finde X!'
+        ];
+        let colors = [
+            'rgb(102, 138, 83)',
+            'rgb(128, 64, 0)',
+            'rgb(255, 192, 0)',
+            'rgb(255, 87, 51)',
+            'rgb(102, 204, 255)',
+            'rgb(153, 102, 255)',
+            'rgb(0, 153, 153)',
+            'rgb(204, 102, 102)',
+            'rgb(76, 153, 0)',
+            'rgb(255, 128, 128)',
+            'rgb(204, 153, 51)',
+            'rgb(51, 153, 255)',
+            'rgb(153, 204, 51)',
+            'rgb(255, 102, 178)',
+            'rgb(102, 102, 255)',
+            'rgb(255, 204, 153)',
+            'rgb(0, 128, 128)',
+            'rgb(255, 204, 204)',
+            'rgb(153, 255, 102)',
+            'rgb(255, 102, 102)',
+            'rgb(128, 128, 0)',
+            'rgb(102, 204, 153)',
+            'rgb(204, 102, 255)',
+            'rgb(255, 255, 153)'
+        ];
+        let dateset = [
+            '2026-12-01',
+            '2026-12-02',
+            '2026-12-03',
+            '2026-12-04',
+            '2026-12-05',
+            '2026-12-06',
+            '2026-12-07',
+            '2026-12-08',
+            '2026-12-09',
+            '2026-12-10',
+            '2026-12-11',
+            '2026-12-12',
+            '2026-12-13',
+            '2026-12-14',
+            '2026-12-15',
+            '2026-12-16',
+            '2026-12-17',
+            '2026-12-18',
+            '2026-12-19',
+            '2026-12-20',
+            '2026-12-21',
+            '2026-12-22',
+            '2026-12-23',
+            '2026-12-24',
+        ];
+    
+        for (let i = 0; i <= 23; i++) {
+            let day = i + 1;
+            document.body.innerHTML += `<div class="door">${day}</div>`;
+        }
+        let doors = document.querySelectorAll(".door");
+        for (let i = 0; i < doors.length; i++) {
+            doors[i].addEventListener("click", function() {
+                openDoor(doors[i], spruche[i], colors[i], dateset[i]);
+            }); 
+        }
+    </script>
+</body>
+
+</html>
