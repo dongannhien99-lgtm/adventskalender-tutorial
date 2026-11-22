@@ -1,0 +1,50 @@
+<svg xmlns="http://w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Adventskalender Icon">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#991B1B" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="innerGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="512" height="512" rx="104" fill="url(#bgGrad)" />
+
+  <!-- Zierrahmen (innerhalb der sicheren Zone für Maskable Icons) -->
+  <rect x="88" y="88" width="336" height="336" rx="28" fill="none" stroke="#FBBF24" stroke-width="8" opacity="0.55" />
+
+  <!-- Geöffnetes Türchen (Innenseite) -->
+  <rect x="136" y="128" width="240" height="256" rx="18" fill="url(#innerGrad)" />
+
+  <!-- Stern im Inneren -->
+  <polygon
+    points="256,178 279,226 332,233 293,270 303,322 256,296 209,322 219,270 180,233 233,226"
+    fill="url(#goldGrad)"
+    stroke="#B45309"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+
+  <!-- Aufgeklappte Tür (links) -->
+  <polygon
+    points="136,128 206,154 206,358 136,384"
+    fill="#B91C1C"
+    stroke="#FBBF24"
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+
+  <!-- Türknauf -->
+  <circle cx="184" cy="256" r="9" fill="#FDE68A" />
+
+  <!-- Kleine Akzentsterne -->
+  <circle cx="342" cy="162" r="7" fill="#F59E0B" />
+  <circle cx="346" cy="348" r="6" fill="#F59E0B" />
+</svg>
