@@ -2,12 +2,12 @@
   "name": "Adventskalender",
   "short_name": "Adventskalender",
   "description": "Ein Adventskalender als Open Source Projekt.",
-  "start_url": "https://dongannhien99-lgtm.github.io/adventskalender-tutorial",
+  "start_url": "/adventskalender-tutorial/",
   "display": "fullscreen",
   "background_color": "#f54336",
   "theme_color": "#f54336",
   "orientation": "any",
-  "scope": "/index.html",
+  "scope": "/adventskalender-tutorial/",
   "lang": "de",
   "categories": [
     "productivity",
@@ -93,7 +93,7 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "/index.html",
+  "id": "/adventskalender-tutorial/",
   "version": "1.0.0",
   "dir": "ltr",
   "prefer_related_applications": false,
